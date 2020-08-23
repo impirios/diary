@@ -16,11 +16,9 @@ public class RcAdapter extends RecyclerView.Adapter<RcAdapter.RcViewHolder> {
     ArrayList<Task> mtasks;
     public static class RcViewHolder extends RecyclerView.ViewHolder{
         TextView mtextview;
-        CheckBox mcheckBox;
         public RcViewHolder(@NonNull View itemView) {
             super(itemView);
             mtextview = itemView.findViewById(R.id.textView);
-            mcheckBox = itemView.findViewById(R.id.checkBox2);
 
         }
     }
@@ -44,9 +42,7 @@ public class RcAdapter extends RecyclerView.Adapter<RcAdapter.RcViewHolder> {
     public void onBindViewHolder(@NonNull RcViewHolder holder, int position) {
         Task task = mtasks.get(position);
         TextView textView = holder.mtextview;
-        CheckBox checkBox = holder.mcheckBox;
         textView.setText(String.valueOf(position+1)+". "+task.getTaskName());
-        checkBox.setChecked(task.getCompleted());
 
     }
 
